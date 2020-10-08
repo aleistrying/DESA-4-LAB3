@@ -71,19 +71,19 @@
                         const B = (App.htmlElements.B.value === "") ? 0 : parseInt(App.htmlElements.B.value);
                         const O = App.htmlElements.O.value; 
                         try {
-                            res = (A + B)*(O==="S")+(A - B)*(O==="R")+(A * B)*(O==="M")+(A / B)*(O=="D");
+                            res = (A + B)*(O==="S")+(A - B)*(O==="R")+(A * B)*(O==="M")+(A / B)*(O==="D");
                         }
                         catch (err) {//no deberia haber error a menos que haya division
                             res = 0;
                         }
                         App.htmlElements.res.innerHTML +=
                             `<tr>
-                            <td>${A}</td>
-                            <td>${(O=='S')?"+":(O=='R')?'-':(O=='M')?'*':'/'}</td>
-                            <td>${B}</td>
-                            <td>=</td>
-                            <td>${res}</td>
-                        </tr>`
+                                <td>${A}</td>
+                                <td>${(O==='S')?"+":(O==='R')?'-':(O==='M')?'*':(O==='D')?'/':'error'}</td>
+                                <td>${B}</td>
+                                <td>=</td>
+                                <td>${res}</td>
+                            </tr>`
                     }
                 }
             };
